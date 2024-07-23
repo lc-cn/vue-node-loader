@@ -1,0 +1,76 @@
+{
+  "name": "vue-node-loader",
+  "version": "0.0.1",
+  "description": "support for import .vue on Node.js",
+  "scripts": {
+    "build": "tsup",
+    "dev": "node -r tsconfig-paths/register -r jiti/register ./src/index.ts",
+    "test": "jest"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.cjs"
+    },
+    "./register": {
+      "require": "./lib/register.js"
+    }
+  },
+  "files": [
+    "lib",
+    "register.js",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lc-cn/vue-node-loader.git"
+  },
+  "keywords": [
+    "vue",
+    "nodejs",
+    "loader"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "packageManager": "pnpm@9.5.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "author": "凉菜 <admin@liucl.cn>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lc-cn/vue-node-loader/issues"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.4",
+    "less": "^4.2.0",
+    "sass": "^1.62.1",
+    "stylus": "^0.63.0"
+  },
+  "peerDependenciesMeta": {
+    "less": {
+      "optional": true
+    },
+    "sass": {
+      "optional": true
+    },
+    "stylus": {
+      "optional": true
+    }
+  },
+  "homepage": "https://github.com/lc-cn/vue-node-loader#readme",
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "@babel/types": "latest",
+    "tsup": "^8.2.2",
+    "jiti": "^1.21.6",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.4"
+  }
+}
